@@ -1,0 +1,37 @@
+{
+  "name": "Shell Development Environment",
+  "dockerComposeFile": [
+    "docker-comose.yml"
+  ],
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "postStartCommand": ".devcontainer/postStartCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mads-hartmann.bash-ide-vscode",
+        "Remisa.shellman",
+        "rogalmic.bash-debug",
+        "spmeesseman.vscode-taskexplorer",
+        "gruntfuggly.todo-tree",
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig",
+        "MarsCode.marscode-extension",
+        "formulahendry.code-runner"
+      ],
+      "settings": {
+        "bashIde.shellcheckPath": "/usr/bin/shellcheck",
+        "files.associations": {
+          "*.sh": "shellscript",
+          "*.bash": "shellscript",
+          "Makefile": "makefile"
+        },
+        "[shellscript]": {
+          "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
+          "editor.formatOnSave": true,
+          "editor.tabSize": 2
+        }
+      }
+    }
+  }
+}

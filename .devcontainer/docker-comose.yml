@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      # 挂载当前目录到容器的 /workspace 目录（使用cached模式以提高性能）
+      - ../:/workspace:cached      
+    # 保持容器运行
+    command: sleep infinity
