@@ -1,0 +1,131 @@
+{  
+  "Shell Script File Header": {
+    "prefix": "sh-header",
+    "body": [
+      "#!/usr/bin/env bash",
+      "#",
+      "# 脚本名称: ${1:${TM_FILENAME}}",
+      "# 描述: ${2:脚本功能描述}",
+      "# 作者: ${3:$TM_FULLNAME}",
+      "# 创建日期: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "# 版本: 1.0.0",
+      "# 许可证: MIT",
+      "#",
+      "# 用法: ./${TM_FILENAME_BASE} [选项]",
+      "#",
+      "# 选项:",
+      "#   -h, --help    显示帮助信息",
+      "#   -v, --verbose 详细输出模式",
+      "#",
+      "# 示例:",
+      "#   ./${TM_FILENAME_BASE} -v",
+      "#",
+      "# 依赖:",
+      "#   - bash 4.0+",
+      "#",
+      "# 退出代码:",
+      "#   0: 成功",
+      "#   1: 参数错误",
+      "#   2: 执行失败",
+      "#",
+      "# 更新日志:",
+      "#   ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} v1.0.0 初始版本",
+      "#"
+    ],
+    "description": "Shell脚本文件头部注释"
+  },
+    "Shell Function Comment": {
+    "prefix": "sh-func",
+    "body": [
+      "# ${1:========================================}",
+      "# 函数功能描述",
+      "# Globals:",
+      "#   ${2:无}",
+      "# Arguments:",
+      "#   \\$1: ${3:参数1描述}",
+      "#   \\$2: ${4:参数2描述}",
+      "# Returns:",
+      "#   ${5:0 成功，非0 失败}",
+      "# Outputs:",
+      "#   ${6:输出描述}",
+      "# Examples:",
+      "#   ${7:function_name arg1 arg2}",
+      "# ${1:========================================}",
+      "function ${8:function_name}() {",
+      "  local ${9:arg1}=\"\\$1\"",
+      "  local ${10:arg2}=\"\\$2\"",
+      "  ",
+      "  # 函数主体",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Shell函数注释模板"
+  },
+  "Shell Function Simple": {
+    "prefix": "sh-func-simple",
+    "body": [
+      "# ${1:函数功能描述}",
+      "# 参数: \\$1=${2:参数1}, \\$2=${3:参数2}",
+      "# 返回: ${4:0成功，非0失败}",
+      "${5:function_}${6:function_name}() {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "简化版函数注释"
+  },
+  "Shell Section Comment": {
+    "prefix": "sh-section",
+    "body": [
+      "# ${1:========================================}",
+      "# ${2:章节标题}",
+      "# ${1:========================================}",
+    ],
+    "description": "章节分隔注释"
+  },
+  "Shell Variable Comment": {
+    "prefix": "sh-var",
+    "body": [
+      "readonly ${1:VARIABLE_NAME}=\"${2:value}\"      # ${3:变量描述}"
+    ],
+    "description": "变量定义注释"
+  },
+    "Shell TODO Comment": {
+    "prefix": "sh-todo",
+    "body": [
+      "# TODO(${1:担当者全名}): ${2:需要完成的任务}",
+      "# 截止: ${3:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE}",
+      "# 优先级: ${4|高,中,低|}"
+    ],
+    "description": "TODO注释模板"
+  },
+
+  "Shell FIXME Comment": {
+    "prefix": "sh-fixme",
+    "body": [
+      "# FIXME(${1:担当者全名}): ${2:需要修复的问题}",
+      "# 问题: ${3:问题描述}",
+      "# 影响: ${4:影响范围}",
+      "# 临时方案: ${5:临时解决方案}",
+      "# 关联: ${6:关联的问题或任务}"
+    ],
+    "description": "FIXME注释模板"
+  },
+"Shell Script Footer": {
+    "prefix": "sh-footer",
+    "body": [
+      "# ========================================",
+      "# 脚本结束",
+      "# ========================================",
+      "",
+      "# 脚本作为主程序运行时，调用 main 函数",
+      "if [[ \"\\${BASH_SOURCE[0]}\" == \"\\${0}\" ]]; then",
+      "  main \"\\$@\"",
+      "else",
+      "  echo \"错误: 脚本只能作为主程序运行\"",
+      "  exit 1",
+      "fi"
+    ],
+    "description": "脚本尾部模板"
+  },
+
+}
