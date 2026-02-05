@@ -1,4 +1,4 @@
-{  
+{
   "Shell Script File Header": {
     "prefix": "sh-header",
     "body": [
@@ -34,7 +34,7 @@
     ],
     "description": "Shell脚本文件头部注释"
   },
-    "Shell Function Comment": {
+  "Shell Function Comment": {
     "prefix": "sh-func",
     "body": [
       "# ${1:========================================}",
@@ -82,14 +82,21 @@
     ],
     "description": "章节分隔注释"
   },
-  "Shell Variable Comment": {
-    "prefix": "sh-var",
+  "Shell Const Variable Comment": {
+    "prefix": "sh-var-const",
     "body": [
-      "readonly ${1:VARIABLE_NAME}=\"${2:value}\"      # ${3:变量描述}"
+      "declare -rx ${1:VARIABLE_NAME}=\"${2:value}\"      # ${3:变量描述}"
     ],
-    "description": "变量定义注释"
+    "description": "只读变量定义注释"
   },
-    "Shell TODO Comment": {
+  "Shell Normal Variable Comment": {
+    "prefix": "sh-var-normal",
+    "body": [
+      "declare -r ${1:VARIABLE_NAME}=\"${2:value}\"      # ${3:变量描述}"
+    ],
+    "description": "普通变量定义注释"
+  },
+  "Shell TODO Comment": {
     "prefix": "sh-todo",
     "body": [
       "# TODO(${1:担当者全名}): ${2:需要完成的任务}",
@@ -98,7 +105,6 @@
     ],
     "description": "TODO注释模板"
   },
-
   "Shell FIXME Comment": {
     "prefix": "sh-fixme",
     "body": [
@@ -110,7 +116,7 @@
     ],
     "description": "FIXME注释模板"
   },
-"Shell Script Footer": {
+  "Shell Script Footer": {
     "prefix": "sh-footer",
     "body": [
       "# ========================================",
@@ -127,5 +133,4 @@
     ],
     "description": "脚本尾部模板"
   },
-
 }
