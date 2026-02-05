@@ -92,7 +92,7 @@
   "Shell Normal Variable Comment": {
     "prefix": "sh-var-normal",
     "body": [
-      "declare -r ${1:VARIABLE_NAME}=\"${2:value}\"      # ${3:变量描述}"
+      "declare -x ${1:VARIABLE_NAME}=\"${2:value}\"      # ${3:变量描述}"
     ],
     "description": "普通变量定义注释"
   },
